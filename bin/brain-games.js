@@ -1,2 +1,10 @@
 #!/usr/bin/env node
-Welcome to the Brain Games!
+
+import { name } from "../src/cli.js";
+import { userName } from "../src/cli.js";
+
+// const name = readlineSync.question('Welcome to the Brain Games! May I have your name? Hello, ');
+
+name()
+userName()
+
