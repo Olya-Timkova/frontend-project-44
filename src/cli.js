@@ -5,4 +5,3 @@ export const name = readlineSync.question('Welcome to the Brain Games!\nMay I ha
 
 //  Ожидаем ответа пользователя.
 export const userName = readlineSync.question(`Hello, ${name}!`);
-// console.log ( ' Hello ' +  userName  + ' ! ' ) ;
