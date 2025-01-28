@@ -1,37 +1,56 @@
 import readlineSync from 'readline-sync';
 
-export const name = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
 
-//  Ожидаем ответа пользователя.
-export const userName = readlineSync.question(`Hello, ${name}!
+export const game = () => {
+
+    const name1 = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
+
+    //  Ожидаем ответа пользователя.
+    const userName = readlineSync.question(`Hello, ${name1}!
 Answer "yes" if the number is even, otherwise answer "no".`)
 
-export const getRandomIntInclusive = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); // Максимум и минимум включаются
-};
+    let counter = 0;
 
-export const evenNumber = (num) => {
-    num = getRandomIntInclusive(0, 100)
-    if (num % 2 === 0 && userName === 'yes' || num % 2 === 1 && userName === 'no') {
-        console.log('Corect')
-    } else if (num % 2 === 0 && userName === 'no') {
-        console(`'no' is wrong answer ;(. Correct answer was 'yes'.
-         Let's try again, ${name}`)
-    } else if (num % 2 === 1 && userName === 'yes') {
-        console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.
-         Let's try again, ${name}`)
+    const startGameAnswer = () => { // функция которая задает вопрос и получает ответ
+
+        const getRandomIntInclusive = (min, max) => { // функция, которая выдает рандомное число
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); // Максимум и минимум включаются
+        };
+
+        const number = getRandomIntInclusive(0, 50);
+
+        const answer = readlineSync.question(`Question: ${number} 
+Your answer: `);
+
+        function evenNumber(num) { // функция, которая считает ответы четные / нечетные
+
+            if (num % 2 === 0 && answer === 'yes' || num % 2 !== 0 && answer === 'no') {
+                console.log('зашеееееел??????????')
+                console.log('Correct!')
+                return
+            } else if (num % 2 === 0 && answer === 'no') {
+                console.log('НЕТ,ЧЕТНОЕ')
+                console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
+Let's try again, ${name1}`)
+                return
+            } else if (num % 2 !== 1 && answer === 'yes') {
+                console.log('НЕТ,НЕЧЕТНОЕ')
+                console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.
+Let's try again, ${name1}`)
+                return
+            }
+            return;
+        };
+
+        evenNumber(number)
     }
-};
 
-export const question = readlineSync.question(`Question: ${getRandomIntInclusive(0, 100)}
-${evenNumber()}Your answer: `);
+    while (counter < 3) { // цикл который запускает функцию startGameAnswer 3 раза
+        startGameAnswer();
+        counter++;
+    }
 
-export const questionTwo = readlineSync.question(`Question: ${getRandomIntInclusive(0, 100)}
-${evenNumber()}Your answer: `)
-
-export const questionThree = readlineSync.question(`Question: ${getRandomIntInclusive(0, 100)}
-${evenNumber()}Your answer: `);
-export const congratulations = readlineSync.question(`Congratulations, ${name}!`)
-
+    const congratulations = readlineSync.question(`Congratulations, ${name1}!`);
+}
