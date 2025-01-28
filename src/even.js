@@ -27,16 +27,13 @@ Your answer: `);
         function evenNumber(num) { // функция, которая считает ответы четные / нечетные
 
             if (num % 2 === 0 && answer === 'yes' || num % 2 !== 0 && answer === 'no') {
-                console.log('зашеееееел??????????')
                 console.log('Correct!')
                 return
             } else if (num % 2 === 0 && answer === 'no') {
-                console.log('НЕТ,ЧЕТНОЕ')
                 console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.
 Let's try again, ${name1}`)
                 return
-            } else if (num % 2 !== 1 && answer === 'yes') {
-                console.log('НЕТ,НЕЧЕТНОЕ')
+            } else if (num % 2 !== 0 && answer === 'yes') {
                 console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.
 Let's try again, ${name1}`)
                 return
