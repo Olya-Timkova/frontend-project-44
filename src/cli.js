@@ -1,7 +1,9 @@
 /* eslint-disable no-use-before-define */
 import readlineSync from 'readline-sync';
 
-export const name = readlineSync.question('Welcome to the Brain Games!\nMay I have your name?');
+export const game = () => {
+    const name = readlineSync.question('Welcome to the Brain Games!\n May I have your name?');
 
-//  Ожидаем ответа пользователя.
-export const userName = readlineSync.question(`Hello, ${name}!`);
+    //  Ожидаем ответа пользователя.
+    const userName = readlineSync.question(`Hello, ${name}!`);
+}
