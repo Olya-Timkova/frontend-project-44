@@ -33,7 +33,7 @@ May I have your name? `);
     const userName = readlineSync.question(`Hello, ${name1}!
 What is the result of the expression?`)
 
-    let counter = 0;
+    let counter = 1;
 
     const startGameAnswer = () => { // функция которая задает вопрос и получает ответ
 
@@ -44,8 +44,8 @@ What is the result of the expression?`)
         const operatorRandom = getRandomeOperators()
 
 
-        let a = Math.floor(Math.random() * 50); // константа с рандом числам а
-        let b = Math.floor(Math.random() * 50); // константа с рандом числам b
+        let a = Math.floor(Math.random() * 30); // константа с рандом числам а
+        let b = Math.floor(Math.random() * 30); // константа с рандом числам b
 
 
         const calc = (num1, operator, num2) => { // функция с математическим примером 
@@ -68,10 +68,10 @@ What is the result of the expression?`)
 Your answer: `);
         function compareAnswer() { // функция, которая, берет ответ пользователя и ответ фунции calc сравнивает их вы водит ответ
 
-            if (questionAnswer === resultCalc) {
+            if (Number(questionAnswer) === resultCalc) {
                 console.log('Correct!')
                 
-            } else if (questionAnswer !== resultCalc) {
+            } else if (Number(questionAnswer) !== resultCalc) {
                 console.log(`'${questionAnswer}' is wrong answer ;(. Correct answer was '${resultCalc}'.
 Let's try again, Sam! ${name1}`)
                 return
@@ -83,10 +83,10 @@ Let's try again, Sam! ${name1}`)
     };
     const startGame = startGameAnswer()
 
-    // while (counter < 3) { // цикл который запускает функцию startGameAnswer 3 раза
-    //     startGameAnswer();
-    //     counter++;
-    // }
+    while (counter < 3) { // цикл который запускает функцию startGameAnswer 3 раза
+        startGameAnswer();
+        counter++;
+    }
 
     const congratulations = readlineSync.question(`Congratulations, ${name1}!`);
 }
