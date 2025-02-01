@@ -6,7 +6,6 @@ install: # установить зависимости
 	npm ci
 
 start: # запустить приложение
-	# heroku local -f Procfile.dev
 	node bin/brain-games.js
 	node bin/brain-even.js
 	node bin/brain-calc.js
