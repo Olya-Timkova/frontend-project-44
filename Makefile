@@ -10,6 +10,7 @@ start: # запустить приложение
 	node bin/brain-even.js
 	node bin/brain-calc.js
 	node bin/brain-gcd.js
+	node bin/brain-progression.js
 
 brain-games:
 	node bin/brain-games.js
@@ -22,6 +23,9 @@ brain-calc:
 
 brain-gcd:
 	node bin/brain-gcd.js
+
+brain-progression:
+	node bin/brain-progression.js
 
 publish:
 	npm publish --dry-run

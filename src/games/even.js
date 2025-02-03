@@ -11,16 +11,14 @@ const questions = () => {
 
 let counter = 0;
 
+let userName = '';
+
 const isValid = (randomNumber, answer) => ((randomNumber % 2 === 0) && (answer === 'yes')) || ((randomNumber % 2 !== 0) && (answer === 'no'))
 
 export const gameEven = () => {
-
-    let userName = '';
-
     if (counter === 0) {
         userName = greetings()
-        console.log('Тут должно быть имя пользовател:', userName)
-        print(`Hello, ${userName}!\nAnswer "yes" if the number is even, otherwise answer "no".`)   //  Ожидаем ответа пользователя.
+       print(`Hello, ${userName}!\nAnswer "yes" if the number is even, otherwise answer "no".`)   //  Ожидаем ответа пользователя.
     }
 
     const { randomNumber, answer } = questions();
@@ -45,10 +43,3 @@ Let's try again, ${userName}`)
     }
 
 };
-
-
-
-
-
-
-// startGames()

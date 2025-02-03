@@ -31,9 +31,9 @@ const checkUserAnswer = (userAnswer, a, b) => {
 
 let counter = 0;
 
+let userName = '';
+
 export const gameGcd = () => {
-    
-    let userName = '';
 
     if (counter === 0) {
         userName = greetings()
@@ -56,7 +56,6 @@ export const gameGcd = () => {
             gameGcd();
         }
     } else {
-        print(`'${userAnswer}' is wrong answer ;(. Correct answer was '${nod(a, b)}'.\nLet's try again, Sam! ${userName}`)
+        print(`'${userAnswer}' is wrong answer ;(. Correct answer was '${nod(a, b)}'.\nLet's try again, ${userName}!`)
     }
-
 }

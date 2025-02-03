@@ -37,13 +37,12 @@ const checkUserAnswer = (userAnswer, a, b, operator) => {
 
 let counter = 0;
 
+let name = '';
+
 export const gameCalc = () => {
-
-    let userName = '';
-
     if (counter === 0) {
-        userName = greetings()
-        print(`Hello, ${userName}!\nWhat is the result of the expression?`)   //  Ожидаем ответа пользователя.
+        name = greetings()
+        print(`Hello, ${name}!\nWhat is the result of the expression?`)   //  Ожидаем ответа пользователя.
     }
 
     const { a, b, operator } = getRandomExamples();
@@ -56,13 +55,13 @@ export const gameCalc = () => {
         print('Correct!');
         counter++;
         if (counter === 3) {
-            print(`Congratulations, ${userName}!`);
+            print(`Congratulations, ${name}!`);
             return;
         } else {
             gameCalc();
         }
     } else {
-        print(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calc(a, operator, b)}'.\nLet's try again, Sam! ${userName}`)
+        print(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calc(a, operator, b)}'.\nLet's try again, ${name}!`)
     }
 
 }
