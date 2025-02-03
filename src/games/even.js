@@ -1,11 +1,5 @@
-import readlineSync from 'readline-sync';
-
-// import { startGames } from '../index.js'
-
-const print = (text) => {
-    const answer = readlineSync.question(text);
-    return answer;
-}
+import { print } from "./../index.js";
+import { greetings } from "./../index.js";
 
 const getRandom = (number) => Math.floor(Math.random() * number);
 
@@ -25,6 +19,7 @@ export const gameEven = () => {
 
     if (counter === 0) {
         userName = greetings()
+        console.log('Тут должно быть имя пользовател:', userName)
         print(`Hello, ${userName}!\nAnswer "yes" if the number is even, otherwise answer "no".`)   //  Ожидаем ответа пользователя.
     }
 

@@ -50,9 +50,9 @@ export const gameCalc = () => {
 
     const userAnswer = print(`Question: ${a} ${operator} ${b} \nYour answer: `);
 
-    const isWin = checkUserAnswer(userAnswer, a, b, operator);
+    const winUser = checkUserAnswer(userAnswer, a, b, operator);
 
-    if (isWin) {
+    if (winUser) {
         print('Correct!');
         counter++;
         if (counter === 3) {
@@ -62,7 +62,7 @@ export const gameCalc = () => {
             gameCalc();
         }
     } else {
-        print(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calc(a, operator, b)}'.\n Let's try again, Sam! ${userName}`)
+        print(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calc(a, operator, b)}'.\nLet's try again, Sam! ${userName}`)
     }
 
 }
