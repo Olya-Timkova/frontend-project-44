@@ -34,7 +34,7 @@ let counter = 0;
 let userName = '';
 
 export const gameGcd = () => {
-
+    
     if (counter === 0) {
         userName = greetings()
         print(`Hello, ${userName}!\nFind the greatest common divisor of given numbers.`)   //  Ожидаем ответа пользователя.
