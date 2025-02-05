@@ -16,4 +16,6 @@ https://asciinema.org/a/62SKYZuMrwzebsQxmQ10MGciv
 ### asciinema запись brain-progression
 https://asciinema.org/a/OeHWCihy7Cr1jBOU2E21onifj
 
+### asciinema запись brain-progression
+https://asciinema.org/a/sMZNTfdtVmnDCB4GVaeRQhudN
 
