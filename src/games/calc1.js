@@ -1,31 +1,30 @@
-import { print } from "./../index.js";
-import { greetings } from "./../index.js";
-
-const getRandomeOperators = () => { // функция которая выдает рандомный арифметический оператор
-    const array = ['+', '-', '*']
-    return array[floorRandom(array.length)];
-}
+import { print, greetings } from '../index.js';
 
 const floorRandom = (number) => Math.floor(Math.random() * number);
 
+const getRandomeOperators = () => { // функция которая выдает рандомный арифметический оператор
+    const array = ['+', '-', '*'];
+    return array[floorRandom(array.length)];
+};
+
 const getRandomExamples = () => {
-    let a = floorRandom(30); // константа с рандом числам а
-    let b = floorRandom(30); // константа с рандом числам b
-    let operator = getRandomeOperators();
+    const a = floorRandom(30); // константа с рандом числам а
+    const b = floorRandom(30); // константа с рандом числам b
+    const operator = getRandomeOperators();
     return { a, b, operator }
-}
+};
 
 const calc = (num1, operator, num2) => { // функция с математическим примером 
-    if (operator === '-') {
+    if (operator === '-'){
         return num1 - num2
-    }
-    if (operator === '+') {
+    };
+    if (operator === '+'){
         return num1 + num2
-    }
-    if (operator === '*') {
+    };
+    if (operator === '*'){
         return num1 * num2
-    }
-}
+    };
+};
 
 const checkUserAnswer = (userAnswer, a, b, operator) => {
     const exampleAnswer = calc(a, operator, b); // вызов функции с математическим примером
@@ -33,7 +32,7 @@ const checkUserAnswer = (userAnswer, a, b, operator) => {
         return true;
     }
     return false;
-}
+};
 
 let counter = 0;
 

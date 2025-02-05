@@ -2,4 +2,4 @@
 
 import { greetings } from '../src/games/cli.js';
 
-greetings()
+greetings();
